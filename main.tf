@@ -75,7 +75,7 @@ resource "aws_lambda_function" "hello" {
   function_name = "tsanghan-ce6-hello-tofu"
   runtime       = "python3.12"
   handler       = "app.hello"
-  filename      = "lambda_function.zip"
+  filename      = data.archive_file.lambda_zip
   role          = aws_iam_role.lambda_exec_role.arn
 
   environment {
@@ -90,7 +90,7 @@ resource "aws_lambda_function" "hello2" {
   function_name = "tsanghan-ce6-hello2-tofu"
   runtime       = "python3.12"
   handler       = "app.hello2"
-  filename      = "lambda_function.zip"
+  filename      = data.archive_file.lambda_zip
   role          = aws_iam_role.lambda_exec_role.arn
 
   environment {
@@ -105,7 +105,7 @@ resource "aws_lambda_function" "hello3" {
   function_name = "tsanghan-ce6-hello3-tofu"
   runtime       = "python3.12"
   handler       = "app.hello3"
-  filename      = "lambda_function.zip"
+  filename      = data.archive_file.lambda_zip
   role          = aws_iam_role.lambda_exec_role.arn
 
   environment {
