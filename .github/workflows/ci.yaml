@@ -122,7 +122,7 @@ jobs:
       run: tofu plan
 
     - name: Tofu Apply
-      run: tofu apply
+      run: tofu apply -auto-approve
 
   # deploy:
   #   runs-on: ubuntu-latest
